@@ -1,26 +1,27 @@
 public class PalindromeNumber {
 
-    public static boolean isPalindrome(int number) {
-        int original = number;  // Store the original number
-        int reversed = 0;  // Initialize the reversed number to 0
-// best opproch i have tryed even we can go for more by
-        // Reverse the number just reffrence for swap these elements
-        while (number > 0) {
-            int digit = number % 10;               // Get the last digit of the number
-            reversed = reversed * 10 + digit;   // Add the digit to the reversed number
-            number = number / 10;               // Remove the last digit
+    public boolean isPalindrome(int x) {
+        // Negative numbers and numbers ending in 0 (but not 0 itself) are not palindromes
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false;
         }
 
-        // Check if the reversed number is equal to the original number
+        int reversed = 0;
+        int original = x;
+
+        while (x > 0) {
+            int digit = x % 10;
+            reversed = reversed * 10 + digit;
+            x /= 10;
+        }
+
         return original == reversed;
     }
 
     public static void main(String[] args) {
-        int num = 121;
-        if (isPalindrome(num)) {
-            System.out.println(num + " is a palindrome number.");
-        } else {
-            System.out.println(num + " is not a palindrome number.");
-        }
+        PalindromeNumber p = new PalindromeNumber();
+        
+        int x = 121;
+        System.out.println("Is " + x + " a palindrome? " + p.isPalindrome(x)); // Output: true
     }
 }
