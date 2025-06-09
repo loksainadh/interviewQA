@@ -22,7 +22,7 @@ public class Akhil {
         }
 
         String ssss= new String(l);
-        System.out.
+        System.out.print(ssss);
     }
 }
 
