@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Javaeight {
+public class Javaeight{
 
     public static void main(String[] args) {
 
